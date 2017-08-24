@@ -73,8 +73,6 @@ class HeaderBackButton extends React.PureComponent<DefaultProps, Props, State> {
     const backButtonTitle = renderTruncated ? truncatedTitle : title;
 
     // eslint-disable-next-line global-require
-    const asset = require('../assets/back-icon.png');
-
     return (
       <TouchableItem
         accessibilityComponentType="button"
@@ -88,14 +86,6 @@ class HeaderBackButton extends React.PureComponent<DefaultProps, Props, State> {
         borderless
       >
         <View style={styles.container}>
-          <Image
-            style={[
-              styles.icon,
-              !!title && styles.iconWithTitle,
-              !!tintColor && { tintColor },
-            ]}
-            source={asset}
-          />
           {Platform.OS === 'ios' &&
             title &&
             <Text
